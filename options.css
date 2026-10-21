@@ -1,0 +1,183 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background-color: #121418;
+  color: #eaecf0;
+  padding: 40px 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  width: 100%;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 8px;
+}
+
+.logo {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+}
+
+h1 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #fff;
+}
+
+.subtitle {
+  font-size: 13px;
+  color: #8c93a4;
+  margin-top: 2px;
+}
+
+.card {
+  background-color: #1c2027;
+  border: 1px solid #282f3a;
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+h2 {
+  font-size: 14px;
+  font-weight: 600;
+  color: #9aa1b2;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.option-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 10px 0;
+  border-top: 1px solid #232832;
+}
+
+.option-row:first-of-type {
+  border-top: none;
+  padding-top: 0;
+}
+
+.option-title {
+  font-size: 14px;
+  font-weight: 500;
+  color: #fff;
+}
+
+.option-desc {
+  font-size: 12px;
+  color: #838a9a;
+  margin-top: 2px;
+}
+
+/* Переключатели */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 44px;
+  height: 24px;
+  flex-shrink: 0;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #3b4251;
+  transition: 0.25s;
+  border-radius: 24px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: 0.25s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #e06262;
+}
+
+input:checked + .slider:before {
+  transform: translateX(20px);
+}
+
+/* Кнопки языка */
+.lang-selector {
+  display: flex;
+  gap: 8px;
+}
+
+.lang-choice {
+  background-color: #262c37;
+  border: 1px solid #343b49;
+  color: #8c93a4;
+  padding: 6px 12px;
+  font-size: 13px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.lang-choice.active {
+  background-color: #3f4759;
+  color: #fff;
+  border-color: #556075;
+}
+
+/* Селект */
+.select-input {
+  background-color: #262c37;
+  border: 1px solid #343b49;
+  color: #eaecf0;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: 13px;
+  outline: none;
+  cursor: pointer;
+}
+
+.select-input:focus {
+  border-color: #e06262;
+}
+
+.footer-note {
+  text-align: center;
+  font-size: 12px;
+  color: #636b7b;
+}

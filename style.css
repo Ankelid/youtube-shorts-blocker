@@ -1,0 +1,33 @@
+/* ========================================================
+   YouTube Shorts Blocker - Легковесные мгновенные стили v1.7
+   ======================================================== */
+
+/* 1. Кнопка "Shorts" в левом боковом меню (полном и свернутом) */
+html.ysb-hide-shorts-ui ytd-guide-entry-renderer:has(a[title="Shorts"]),
+html.ysb-hide-shorts-ui ytd-guide-entry-renderer:has(a[href*="/shorts"]),
+html.ysb-hide-shorts-ui ytd-mini-guide-entry-renderer[aria-label="Shorts"],
+html.ysb-hide-shorts-ui ytd-mini-guide-entry-renderer:has(a[href*="/shorts"]),
+html.ysb-hide-shorts-ui a#endpoint[title="Shorts"],
+html.ysb-hide-shorts-ui a[title="Shorts"],
+
+/* 2. Кнопка-фильтр "Shorts" в верхней строке чипсов */
+html.ysb-hide-shorts-ui yt-chip-cloud-chip-renderer:has(yt-formatted-string[title="Shorts"]),
+html.ysb-hide-shorts-ui yt-chip-cloud-chip-renderer:has([title="Shorts"]),
+html.ysb-hide-shorts-ui yt-chip-cloud-chip-renderer:has([aria-label="Shorts"]),
+
+/* 3. Вкладка Shorts на страницах каналов */
+html.ysb-hide-shorts-ui yt-tab-shape[tab-title="Shorts"],
+html.ysb-hide-shorts-ui tp-yt-paper-tab:has(.tab-content[aria-label="Shorts"]),
+
+/* 4. Быстрые селекторы полок (без тяжелых проверок потомков) */
+html.ysb-hide-shorts-ui ytd-reel-shelf-renderer,
+html.ysb-hide-shorts-ui ytd-rich-shelf-renderer[is-shorts],
+html.ysb-hide-shorts-ui ytd-rich-section-renderer:has(ytd-rich-shelf-renderer[is-shorts]),
+html.ysb-hide-shorts-ui ytd-reel-item-renderer,
+html.ysb-hide-shorts-ui yt-reel-item-view-model,
+html.ysb-hide-shorts-ui [is-shorts],
+
+/* 5. Мгновенное скрытие элементов, найденных скриптом */
+html.ysb-hide-shorts-ui .ysb-hidden {
+  display: none !important;
+}

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>YouTube Shorts Blocker</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <!-- Главный экран: Только один мастер-тумблер -->
+  <div id="view-main" class="view">
+    <div class="header">
+      <div class="logo">
+        <img src="icons/icon32.png" alt="Logo" class="logo-img">
+        <span class="logo-title" data-i18n="appTitle">Shorts Blocker</span>
+      </div>
+      <span id="status-badge" class="badge active" data-i18n="statusActive">Вкл</span>
+    </div>
+
+    <!-- Единственный тумблер на главном экране -->
+    <div class="master-card">
+      <div class="control-text">
+        <span class="control-label" data-i18n="masterToggleTitle">Блокировщик Shorts</span>
+        <span class="control-hint" data-i18n="masterToggleDesc">Основной выключатель работы расширения</span>
+      </div>
+      <label class="switch switch-lg">
+        <input type="checkbox" id="master-toggle" checked>
+        <span class="slider"></span>
+      </label>
+    </div>
+
+    <!-- Нижняя строка с шестеренкой в правом нижнем углу -->
+    <div class="footer">
+      <span class="version-label">v1.4</span>
+      <button id="btn-open-settings" class="gear-btn" title="Настройки" aria-label="Настройки">
+        <svg viewBox="0 0 24 24" class="gear-icon" fill="currentColor">
+          <path d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58a.49.49 0 0 0 .12-.61l-1.92-3.32a.488.488 0 0 0-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54a.484.484 0 0 0-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.07.62-.07.94s.02.64.07.94l-2.03 1.58a.49.49 0 0 0-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Экран настроек: Два тумблера + Язык -->
+  <div id="view-settings" class="view hidden">
+    <div class="header settings-header">
+      <button id="btn-back" class="back-btn" title="Назад">
+        <span class="back-arrow">←</span>
+        <span data-i18n="backBtn">Назад</span>
+      </button>
+      <span class="settings-title" data-i18n="settingsTitle">Настройки</span>
+    </div>
+
+    <div class="settings-body">
+      <!-- Блок двух внутренних тумблеров (включены по умолчанию) -->
+      <div class="settings-section-title" data-i18n="featuresSection">Функции блокировки</div>
+
+      <!-- 1. Блокировать открытие Shorts -->
+      <div class="control-card">
+        <div class="control-text">
+          <span class="control-label" data-i18n="blockPlaybackTitle">Блокировать открытие Shorts</span>
+          <span class="control-hint" data-i18n="blockPlaybackDesc">Запрещает просмотр и возвращает назад</span>
+        </div>
+        <label class="switch">
+          <input type="checkbox" id="toggle-block-playback" checked>
+          <span class="slider"></span>
+        </label>
+      </div>
+
+      <!-- 2. Скрывать Shorts -->
+      <div class="control-card">
+        <div class="control-text">
+          <span class="control-label" data-i18n="hideButtonsTitle">Скрывать Shorts</span>
+          <span class="control-hint" data-i18n="hideButtonsDesc">Полностью убирает Shorts и ленты</span>
+        </div>
+        <label class="switch">
+          <input type="checkbox" id="toggle-hide-buttons" checked>
+          <span class="slider"></span>
+        </label>
+      </div>
+
+      <!-- Выбор языка -->
+      <div class="setting-group">
+        <label class="setting-label" data-i18n="langLabel">Язык интерфейса</label>
+        <div class="lang-selector">
+          <button type="button" class="lang-choice" data-lang="ru">
+            <span class="lang-flag">🇷🇺</span> Русский
+          </button>
+          <button type="button" class="lang-choice" data-lang="en">
+            <span class="lang-flag">🇬🇧</span> English
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

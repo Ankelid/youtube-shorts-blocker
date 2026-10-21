@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>YouTube Shorts Blocker - Settings</title>
+  <link rel="stylesheet" href="options.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <img src="icons/icon48.png" alt="Logo" class="logo">
+      <div>
+        <h1 data-i18n="appTitle">YouTube Shorts Blocker</h1>
+        <p class="subtitle" data-i18n="settingsTitle">Настройки расширения</p>
+      </div>
+    </div>
+
+    <!-- Основные функции -->
+    <div class="card">
+      <h2 data-i18n="featuresSection">Функции блокировки</h2>
+      
+      <!-- 1. Блокировать открытие Shorts -->
+      <div class="option-row">
+        <div>
+          <div class="option-title" data-i18n="blockPlaybackTitle">Блокировать открытие Shorts</div>
+          <div class="option-desc" data-i18n="blockPlaybackDesc">Запрещает запуск и оставляет вас на прежней странице</div>
+        </div>
+        <label class="switch">
+          <input type="checkbox" id="opt-block-playback" checked>
+          <span class="slider"></span>
+        </label>
+      </div>
+
+      <!-- 2. Скрывать Shorts -->
+      <div class="option-row">
+        <div>
+          <div class="option-title" data-i18n="hideButtonsTitle">Скрывать Shorts</div>
+          <div class="option-desc" data-i18n="hideButtonsDesc">Полностью убирает Shorts и ленты из YouTube</div>
+        </div>
+        <label class="switch">
+          <input type="checkbox" id="opt-hide-buttons" checked>
+          <span class="slider"></span>
+        </label>
+      </div>
+    </div>
+
+    <!-- Язык -->
+    <div class="card">
+      <h2 data-i18n="langSection">Язык интерфейса</h2>
+
+      <div class="option-row">
+        <div>
+          <div class="option-title" data-i18n="langLabel">Язык</div>
+          <div class="option-desc" data-i18n="langDesc">Выберите язык интерфейса расширения</div>
+        </div>
+        <div class="lang-selector">
+          <button type="button" class="lang-choice" data-lang="ru">🇷🇺 Русский</button>
+          <button type="button" class="lang-choice" data-lang="en">🇬🇧 English</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-note">
+      <span data-i18n="savedAuto">Все настройки сохраняются автоматически.</span>
+    </div>
+  </div>
+
+  <script src="options.js"></script>
+</body>
+</html>
